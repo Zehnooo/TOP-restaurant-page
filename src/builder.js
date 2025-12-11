@@ -1,6 +1,6 @@
-import cover from './assets/coverimg.jpg';
+import cover from './assets/coverimg-min.jpg';
 
-export function homePage(){
+export function buildHomePage(){
     const content = document.querySelector('#content');
 
     const container = document.createElement('div');
@@ -27,4 +27,13 @@ export function homePage(){
     imageContainer.append(imgText, image);
     container.append(imageContainer);
     content.append(container);
+
+    if (image.complete){
+        document.body.classList.add('reveal');
+    } else {
+        image.addEventListener('load', () => {
+            document.body.classList.add('reveal');
+        });
+    }
+
 }

@@ -1,6 +1,9 @@
 import './styles.css'
-import {homePage} from './builder.js'
-
-
+import {buildHomePage} from './builder.js'
+document.body.classList.add('hidden');
+window.addEventListener('load', () => {
+    console.log('Window loaded');
+    buildHomePage();
+});
 console.log("hello wall");
-homePage();
+
