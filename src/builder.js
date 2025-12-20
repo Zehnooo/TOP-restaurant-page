@@ -25,10 +25,9 @@ function buildHeader(){
     logoContainer.append(logoImg);
     headContainer.append(logoContainer, name);
 }
-function buildHomeCover(){
-    const content = document.querySelector('#content');
-    const container = createElement('div', 'cover', [], null, null);
-    const imageContainer = createElement('div', 'img-container', [], null, null);
+function buildHomeCover(content){
+    const container = createElement('div', 'cover', []);
+    const imageContainer = createElement('div', 'img-container');
     const image = createElement('img', null, ['hidden'], null, cover);
     imageContainer.append(image);
     container.append(imageContainer);
@@ -43,9 +42,20 @@ function buildHomeCover(){
         image.classList.remove('hidden');
     }
 }
+
+function buildHomeSectionA(content){
+    const section = createElement('section', 's1');
+    const heading = createElement('h2', null, ['section-heading'], 'Welcome to Zehno\'s Ramen');
+    const divider = createElement('hr');
+    const grid = createElement('div', null, ['grid']);
+    section.append(heading, divider, grid);
+    content.append(section);
+}
 export function buildHomePage(){
+    const content = document.querySelector('#content');
     buildHeader();
-    buildHomeCover();
+    buildHomeCover(content);
+    buildHomeSectionA(content);
     document.body.classList.add('reveal');
     document.body.classList.remove('hidden');
 }
