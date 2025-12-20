@@ -3,7 +3,6 @@ import logo from './assets/logo-small.png';
 
 export function buildHomePage(){
     const content = document.querySelector('#content');
-
     const headContainer = document.querySelector('#head-container');
     const logoContainer = document.querySelector('#logo-container');
     const logoImg = document.createElement('img');
@@ -21,7 +20,7 @@ export function buildHomePage(){
     buttons.forEach(button => button.classList.add('hvr-bubble-bottom'));
     buttons.forEach(button => button.classList.add('hvr-underline-from-center'));
     const container = document.createElement('div');
-
+    container.id = 'cover';
     const imageContainer = document.createElement('div');
         imageContainer.id = 'img-container';
 
