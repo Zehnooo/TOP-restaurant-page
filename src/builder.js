@@ -1,4 +1,4 @@
-import cover from './assets/coverimg-min.jpg';
+import cover from './assets/coverimg.jpg';
 
 export function buildHomePage(){
     const content = document.querySelector('#content');
