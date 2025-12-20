@@ -341,6 +341,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 8px;
+    background-color: white;
 }
 #head-container {
     width: 30%;
