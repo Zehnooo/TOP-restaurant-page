@@ -25,7 +25,7 @@ function buildHeader(){
     logoContainer.append(logoImg);
     headContainer.append(logoContainer, name);
 }
-function buildCover(){
+function buildHomeCover(){
     const content = document.querySelector('#content');
     const container = createElement('div', 'cover', [], null, null);
     const imageContainer = createElement('div', 'img-container', [], null, null);
@@ -45,7 +45,7 @@ function buildCover(){
 }
 export function buildHomePage(){
     buildHeader();
-    buildCover();
+    buildHomeCover();
     document.body.classList.add('reveal');
     document.body.classList.remove('hidden');
 }
