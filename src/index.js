@@ -5,5 +5,5 @@ window.addEventListener('load', () => {
     console.log('Window loaded');
     buildHomePage();
 });
-console.log("hello wall");
+
 
