@@ -444,7 +444,7 @@ header button {
 }
 #s1::before {
     content:"\2BC6";
-    margin-top: 32px;
+    margin: 32px auto;
     font-size: 48px;
     display: flex;
     justify-content: center;
@@ -475,24 +475,35 @@ header button {
     gap: 2rem;
     padding: 16px;
 }
-#hours {
-    padding: 16px;
-    background-color: white;
-    border-radius: 12px;
+.grid > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    white-space: pre-line;
-}
-#hours p {
-    text-wrap: wrap;
-    line-height: 2;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-}
-#address {
     padding: 16px;
     background-color: white;
     border-radius: 12px;
+}
+#hours {
+    white-space: pre-line;
+}
+.grid h3 {
+    font-size: 24px;
+}
+#hours div {
+    width: 80%;
+    padding: 8px;
+    gap: 8px;
+    text-wrap: wrap;
+    line-height: 2;
+    font-size: 20px;
+}
+
+#hours div > p {
+    border-bottom: 1px solid #C0C0C0;
+
+}
+#address {
+
 }
 /* Hover Effects */
 
