@@ -412,7 +412,7 @@ header button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px auto;
+    margin: 0px auto;
     overflow: hidden;
 }
 
