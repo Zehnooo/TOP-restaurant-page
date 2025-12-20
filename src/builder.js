@@ -48,6 +48,19 @@ function buildHomeSectionA(content){
     const heading = createElement('h2', null, ['section-heading'], 'Welcome to Zehno\'s Ramen');
     const divider = createElement('hr');
     const grid = createElement('div', null, ['grid']);
+    const hoursContainer = createElement('div', 'hours');
+    const hoursHeading = createElement('h3', null, [], 'Hours');
+    const hoursArr = ['MONDAY: 11AM - 10PM', 'TUESDAY: CLOSED', 'WEDNESDAY - THURSDAY: 11AM-10PM', 'FRIDAY - SATURDAY: 11AM-1AM', 'SUNDAY: CLOSED' ]
+    const hoursDiv = createElement('div');
+    for (let i = 0; i < hoursArr.length; i++){
+        const p = createElement('p', null, [], hoursArr[i]);
+        hoursDiv.append(p);
+    }
+    hoursContainer.append(hoursHeading, hoursDiv);
+    const addressContainer = createElement('div', 'address');
+    const addressHeading = createElement('h3', null, [], 'Address');
+    addressContainer.append(addressHeading);
+    grid.append(hoursContainer, addressContainer);
     section.append(heading, divider, grid);
     content.append(section);
 }
