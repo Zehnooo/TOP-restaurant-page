@@ -24,6 +24,7 @@ function buildHeader(){
 
     logoContainer.append(logoImg);
     headContainer.append(logoContainer, name);
+    console.log('header built');
 }
 function buildHomeCover(content){
     const container = createElement('div', 'cover', []);
@@ -41,6 +42,7 @@ function buildHomeCover(content){
         });
         image.classList.remove('hidden');
     }
+    console.log('cover built');
 }
 
 function buildHomeSectionA(content){
@@ -63,6 +65,7 @@ function buildHomeSectionA(content){
     grid.append(hoursContainer, addressContainer);
     section.append(heading, divider, grid);
     content.append(section);
+    console.log('section A built');
 }
 export function buildHomePage(){
     const content = document.querySelector('#content');
@@ -71,4 +74,5 @@ export function buildHomePage(){
     buildHomeSectionA(content);
     document.body.classList.add('reveal');
     document.body.classList.remove('hidden');
+    console.log('home page built');
 }
