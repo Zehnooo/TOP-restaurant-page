@@ -408,7 +408,6 @@ header button {
 #img-container {
     width: 100%;
     height: 75vh;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,23 +415,10 @@ header button {
     overflow: hidden;
 }
 
-#cover::after {
-    content:"\2BC6";
-    margin-top: 32px;
-    font-size: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #C0C0C0;
-    animation: hover 2s linear infinite;
-}
-
 #img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    z-index: 1;
 }
 
 #imgText {
@@ -454,7 +440,17 @@ header button {
     align-items: center;
     flex-direction: column;
     width: 80%;
-    height: 50vh;
+    min-height: min-content;
+}
+#s1::before {
+    content:"\2BC6";
+    margin-top: 32px;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C0C0C0;
+    animation: hover 2s linear infinite;
 }
 
 #s1 h2 {
@@ -467,13 +463,36 @@ header button {
     height: 1px;
     border-top: 3px dashed #FFFFFF;
     width: 25%;
-    margin: 2rem auto;
+    margin: 2em auto;
 }
 
 .grid {
     display: grid;
+    width: 100%;
+    height: 100%;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(300px, 500px));
     gap: 2rem;
+    padding: 16px;
+}
+#hours {
+    padding: 16px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: pre-line;
+}
+#hours p {
+    text-wrap: wrap;
+    line-height: 2;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+#address {
+    padding: 16px;
+    background-color: white;
+    border-radius: 12px;
 }
 /* Hover Effects */
 
