@@ -1,56 +1,51 @@
 import cover from './assets/coverimg.jpg';
 import logo from './assets/logo-small.png';
 
-export function buildHomePage(){
-    const content = document.querySelector('#content');
+function createElement(el, id = null, classes = [], text = null, src = null) {
+    const element = document.createElement(el);
+    if (id) element.id = id;
+    if (classes.length > 0) element.classList.add(...classes);
+    if (text) element.textContent = text;
+    if (el === 'img' && src) element.src = src;
+    return element;
+}
+function buildHeader(){
     const headContainer = document.querySelector('#head-container');
     const logoContainer = document.querySelector('#logo-container');
-    const logoImg = document.createElement('img');
-    logoImg.src = logo;
-    document.querySelector('header').style.backgroundColor = 'white';
-    const name = document.createElement('p');
-    name.textContent = 'Zehno\'s Ramen';
-    name.style.color = 'black';
-    logoContainer.append(logoImg);
-    headContainer.append(logoContainer, name);
-
     const header = document.querySelector("header");
     const buttons = header.querySelectorAll('button');
-    buttons.forEach(button => button.classList.add('hvr-grow'));
-    buttons.forEach(button => button.classList.add('hvr-bubble-bottom'));
-    buttons.forEach(button => button.classList.add('hvr-underline-from-center'));
-    const container = document.createElement('div');
-    container.id = 'cover';
-    const imageContainer = document.createElement('div');
-        imageContainer.id = 'img-container';
+    const buttonClasses = ['hvr-grow', 'hvr-bubble-bottom', 'hvr-underline-from-center','tracking-in'];
 
-    const image = document.createElement('img');
-    image.src = cover;
-    image.classList.add('hidden');
-    const imgText = document.createElement('div');
-    imgText.id = 'imgText';
+    const logoImg = createElement('img', null, ['tracking-in'], null, logo );
+    const name = createElement('p', null, ['tracking-in'], 'Zehno\'s Ramen');
+    name.style.color = 'black';
 
+    buttonClasses.forEach((buttonClass) => buttons.forEach(button => button.classList.add(buttonClass)));
+
+    logoContainer.append(logoImg);
+    headContainer.append(logoContainer, name);
+}
+function buildCover(){
+    const content = document.querySelector('#content');
+    const container = createElement('div', 'cover', [], null, null);
+    const imageContainer = createElement('div', 'img-container', [], null, null);
+    const image = createElement('img', null, ['hidden'], null, cover);
     imageContainer.append(image);
     container.append(imageContainer);
     content.append(container);
-
-
     if (image.complete){
         image.classList.add('fade-in');
         image.classList.remove('hidden');
-        logoImg.classList.add('tracking-in');
-        name.classList.add('tracking-in');
-        buttons.forEach(button => button.classList.add('tracking-in'));
     } else {
         image.addEventListener('load', () => {
-        setTimeout(() => image.classList.add('fade-in'), 500);
+            setTimeout(() => image.classList.add('fade-in'), 500);
         });
         image.classList.remove('hidden');
-        logoImg.classList.add('tracking-in');
-        name.classList.add('tracking-in');
-        buttons.forEach(button => button.classList.add('tracking-in'));
     }
-
+}
+export function buildHomePage(){
+    buildHeader();
+    buildCover();
     document.body.classList.add('reveal');
     document.body.classList.remove('hidden');
 }
