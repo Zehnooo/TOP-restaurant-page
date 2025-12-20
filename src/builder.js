@@ -50,17 +50,19 @@ export function buildHomePage(){
 
 
     if (image.complete){
-   // image.classList.remove('hidden');
         image.classList.add('fade-in');
+        image.classList.remove('hidden');
         logoImg.classList.add('tracking-in');
         name.classList.add('tracking-in');
+        buttons.forEach(button => button.classList.add('tracking-in'));
     } else {
         image.addEventListener('load', () => {
-         //   image.classList.remove('hidden');
         setTimeout(() => image.classList.add('fade-in'), 500);
         });
+        image.classList.remove('hidden');
         logoImg.classList.add('tracking-in');
         name.classList.add('tracking-in');
+        buttons.forEach(button => button.classList.add('tracking-in'));
     }
 
     document.body.classList.add('reveal');
