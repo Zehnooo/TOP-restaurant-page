@@ -23,26 +23,13 @@ export function buildHomePage(){
     const container = document.createElement('div');
 
     const imageContainer = document.createElement('div');
-        imageContainer.id = 'imgCont';
+        imageContainer.id = 'img-container';
 
     const image = document.createElement('img');
     image.src = cover;
     image.classList.add('hidden');
     const imgText = document.createElement('div');
     imgText.id = 'imgText';
-/*
-    const mainHeading = document.createElement('h3')
-        mainHeading.textContent = 'Welcome to';
-    const name = document.createElement('h1')
-        name.textContent = "Zehno's Restaurant";
-    const secondaryHeading = document.createElement('h3')
-        secondaryHeading.textContent = 'Modern, beautiful, delicious.'
-
-    imgText.append(mainHeading, name, secondaryHeading)
-
-
-
- */
 
     imageContainer.append(image);
     container.append(imageContainer);
