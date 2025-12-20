@@ -327,9 +327,8 @@ template {
 }
 body {
     background-color: #592720;
-    font-family: 'Fira';
+    font-family: 'Fira', Verdana, Geneva, sans-serif;
 }
-
 body.reveal {
     opacity: 1;
     transition: opacity 0.7s ease-in-out;
