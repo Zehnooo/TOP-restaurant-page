@@ -342,7 +342,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px;
     background-color: white;
 }
 #head-container {
@@ -413,8 +412,6 @@ header button {
     width: 100%;
     height: 75vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -426,22 +423,11 @@ header button {
     overflow: hidden;
 }
 
-#imgText {
-    width: 50%;
-    height: 75%;
-    color: black;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 12px;
-}
-
 #s1::before {
     content:"\2BC6";
     margin: 32px auto;
-    font-size: 48px;
+    padding: 16px;
+    font-size: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -461,22 +447,23 @@ header button {
 
 #image-grid {
     margin: 24px 0;
-    gap: 16px;
+    gap: 8px;
     grid-template: repeat(2, 1fr) / repeat(3, 1fr);
     max-width: 85vw;
     height: auto;
     background-color: white;
-    padding: 16px;
+    padding: 8px;
     border-radius: 12px;
 }
 
 #image-grid > div {
-    width: 400px;
-    height: 400px;
+    max-width: 400px;
+    max-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    border: 6px solid black;
+    border-radius: 16px;
 }
 
 #image-grid > div img {
@@ -484,7 +471,7 @@ header button {
     height: 100%;
     object-fit: cover;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 10px;
 }
 
 #s2 {
@@ -515,6 +502,8 @@ header button {
     grid-template-rows: repeat(2, minmax(300px, 500px));
     width: 100%;
     height: 100%;
+    padding: 8px;
+    gap: 16px;
 }
 
 #company-info > div {
@@ -543,7 +532,6 @@ header button {
 
 #hours div > p {
     border-bottom: 1px solid #C0C0C0;
-
 }
 #address {
 

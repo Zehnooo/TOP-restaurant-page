@@ -74,8 +74,6 @@ function buildHomeSectionA(content){
 
 function buildHomeSectionB(content){
     const section = createElement('section', 's2');
-    const heading = createElement('h2', null, ['section-heading'], 'Welcome to Zehno\'s Ramen');
-    const divider = createElement('hr');
     const grid = createElement('div', 'company-info', ['grid']);
     const hoursContainer = createElement('div', 'hours');
     const hoursHeading = createElement('h3', null, [], 'Hours');
@@ -95,7 +93,7 @@ function buildHomeSectionB(content){
 
     addressContainer.append(addressHeading);
     grid.append(hoursContainer, addressContainer);
-    section.append(heading, divider, grid);
+    section.append(grid);
     content.append(section);
     console.log('section B built');
 }
