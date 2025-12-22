@@ -316,14 +316,10 @@ template {
 [hidden] {
     display: none;
 }
-
-
+/* End CSS Reset */
 @font-face {
     font-family: 'Fira';
     src: url('/src/assets/FiraSans-Medium.ttf');
-}
-.hidden {
-    opacity: 0;
 }
 body {
     background-color: #592720;
@@ -332,6 +328,13 @@ body {
 body.reveal {
     opacity: 1;
     transition: opacity 0.7s ease-in-out;
+}
+.hidden {
+    opacity: 0;
+}
+.grid {
+    margin: 0 auto;
+    display: grid;
 }
 header {
     width: 100%;
@@ -435,16 +438,7 @@ header button {
     border-radius: 12px;
 }
 
-#s2 {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    min-height: min-content;
-}
-#s2::before {
+#s1::before {
     content:"\2BC6";
     margin: 32px auto;
     font-size: 48px;
@@ -454,6 +448,55 @@ header button {
     color: #C0C0C0;
     animation: hover 2s linear infinite;
 }
+
+#s1 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: min-content;
+}
+
+#image-grid {
+    margin: 24px 0;
+    gap: 16px;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    max-width: 85vw;
+    height: auto;
+    background-color: white;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+#image-grid > div {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#image-grid > div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+#s2 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    min-height: min-content;
+}
+
 
 #s2 h2 {
     margin: 8px 0;
@@ -467,17 +510,14 @@ header button {
     width: 25%;
     margin: 2em auto;
 }
-
-.grid {
-    display: grid;
-    width: 100%;
-    height: 100%;
+#company-info {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, minmax(300px, 500px));
-    gap: 2rem;
-    padding: 16px;
+    width: 100%;
+    height: 100%;
 }
-.grid > div {
+
+#company-info > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -485,6 +525,7 @@ header button {
     background-color: white;
     border-radius: 12px;
 }
+
 #hours {
     white-space: pre-line;
 }
