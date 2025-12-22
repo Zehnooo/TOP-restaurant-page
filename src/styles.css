@@ -435,7 +435,7 @@ header button {
     border-radius: 12px;
 }
 
-#s1 {
+#s2 {
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -444,7 +444,7 @@ header button {
     width: 80%;
     min-height: min-content;
 }
-#s1::before {
+#s2::before {
     content:"\2BC6";
     margin: 32px auto;
     font-size: 48px;
@@ -455,12 +455,12 @@ header button {
     animation: hover 2s linear infinite;
 }
 
-#s1 h2 {
+#s2 h2 {
     margin: 8px 0;
     font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
-#s1 hr {
+#s2 hr {
     border: none;
     height: 1px;
     border-top: 3px dashed #FFFFFF;

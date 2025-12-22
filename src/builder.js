@@ -34,19 +34,24 @@ function buildHomeCover(content){
     container.append(imageContainer);
     content.append(container);
     if (image.complete){
-        image.classList.add('fade-in');
         image.classList.remove('hidden');
+        image.classList.add('fade-in');
+
     } else {
         image.addEventListener('load', () => {
-            setTimeout(() => image.classList.add('fade-in'), 500);
+
+            setTimeout(() => {
+                image.classList.remove('hidden')
+                image.classList.add('fade-in')
+            }, 500);
         });
-        image.classList.remove('hidden');
+
     }
     console.log('cover built');
 }
 
-function buildHomeSectionA(content){
-    const section = createElement('section', 's1');
+function buildHomeSectionB(content){
+    const section = createElement('section', 's2');
     const heading = createElement('h2', null, ['section-heading'], 'Welcome to Zehno\'s Ramen');
     const divider = createElement('hr');
     const grid = createElement('div', null, ['grid']);
@@ -59,19 +64,24 @@ function buildHomeSectionA(content){
         hoursDiv.append(p);
     }
     hoursContainer.append(hoursHeading, hoursDiv);
-    const addressContainer = createElement('div', 'address');
-    const addressHeading = createElement('h3', null, [], 'Address');
+
+    const addressContainer = createElement('div', 'location');
+    const addressHeading = createElement('h3', null, [], 'Location');
+
+
+
+
     addressContainer.append(addressHeading);
     grid.append(hoursContainer, addressContainer);
     section.append(heading, divider, grid);
     content.append(section);
-    console.log('section A built');
+    console.log('section B built');
 }
 export function buildHomePage(){
     const content = document.querySelector('#content');
     buildHeader();
     buildHomeCover(content);
-    buildHomeSectionA(content);
+    buildHomeSectionB(content);
     document.body.classList.add('reveal');
     document.body.classList.remove('hidden');
     console.log('home page built');
