@@ -424,7 +424,7 @@ header button {
 }
 
 #s1::before {
-    content:"\2BC6";
+    content:"⯆";
     margin: 32px auto;
     padding: 16px;
     font-size: 4rem;
