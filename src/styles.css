@@ -423,20 +423,8 @@ header button {
     overflow: hidden;
 }
 
-#s1::before {
-    content:"⯆";
-    margin: 32px auto;
-    padding: 16px;
-    font-size: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #C0C0C0;
-    animation: hover 2s linear infinite;
-}
-
 #s1 {
-    margin: 0 auto;
+    margin: 36px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -446,24 +434,22 @@ header button {
 }
 
 #image-grid {
-    margin: 24px 0;
-    gap: 8px;
-    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    margin: 18px 0;
+    grid-template: repeat(3, auto) / repeat(3, auto);
     max-width: 85vw;
     height: auto;
-    background-color: white;
-    padding: 8px;
+    padding: 16px;
     border-radius: 12px;
 }
 
 #image-grid > div {
+    min-height: min-content;
     max-width: 400px;
     max-height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid black;
-    border-radius: 16px;
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
 }
@@ -496,7 +482,12 @@ header button {
     opacity: 1;
 }
 
-
+.ramen0, .ramen3 {
+    transform: translateY(48px);
+}
+.ramen2, .ramen5 {
+    transform: translateY(-48px);
+}
 #s2 {
     margin: 0 auto;
     display: flex;

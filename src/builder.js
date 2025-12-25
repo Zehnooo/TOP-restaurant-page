@@ -62,8 +62,9 @@ function buildHomeSectionA(content){
     const imgFiles = [ramen1, ramen2, ramen3, ramen4, ramen5, ramen6];
     const images = [];
     for (let i = 0; i < imgFiles.length; i++){
-        const div = createElement('div',);
-        const img = createElement('img', null, ['ramen'], null, imgFiles[i]);
+
+        const div = createElement('div', null, [`ramen${i}`]);
+        const img = createElement('img', null, [], null, imgFiles[i]);
         div.append(img);
         images.push(div);
     }
