@@ -17,7 +17,7 @@ function buildHeader(){
     const buttonClasses = ['hvr-grow', 'hvr-bubble-bottom', 'hvr-underline-from-center','tracking-in'];
 
     const logoImg = createElement('img', null, ['tracking-in'], null, logo );
-    const name = createElement('p', null, ['tracking-in'], 'Zehno\'s Ramen');
+    const name = createElement('h2', null, ['tracking-in'], 'Zehno\'s Ramen');
     name.style.color = 'black';
 
     buttonClasses.forEach((buttonClass) => buttons.forEach(button => button.classList.add(buttonClass)));
