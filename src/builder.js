@@ -1,5 +1,6 @@
 import cover from './assets/coverimg.jpg';
 import logo from './assets/logo-small.png';
+import menu from './menu.json';
 import ramen1 from './assets/ramen1.jpg';
 import ramen2 from './assets/ramen2.jpg';
 import ramen3 from './assets/ramen3.jpg';
@@ -15,7 +16,13 @@ function createElement(el, id = null, classes = [], text = null, src = null) {
     if (el === 'img' && src) element.src = src;
     return element;
 }
-function buildHeader(){
+
+function clearMain(){
+    const main = document.querySelector('#content');
+    main.innerHTML = '';
+}
+
+export function buildHeader(){
     const headContainer = document.querySelector('#head-container');
     const logoContainer = document.querySelector('#logo-container');
     const header = document.querySelector("header");
@@ -27,7 +34,7 @@ function buildHeader(){
     name.style.color = 'black';
 
     buttonClasses.forEach((buttonClass) => buttons.forEach(button => button.classList.add(buttonClass)));
-
+    buttons.forEach(button => button.addEventListener('click', (e) => handleNav(e)));
     logoContainer.append(logoImg);
     headContainer.append(logoContainer, name);
     console.log('header built');
@@ -70,19 +77,10 @@ function buildHomeSectionA(content){
     content.append(section);
 }
 
-function buildHomeSectionB(content){
-    const section = createElement('section', 's2');
-
-
-    content.append(section);
-    console.log('section B built');
-}
 export function buildHomePage(){
     const content = document.querySelector('#content');
-    buildHeader();
     buildHomeCover(content);
     buildHomeSectionA(content);
-    buildHomeSectionB(content);
     document.body.classList.add('reveal');
     console.log('home page built');
 }
@@ -107,4 +105,41 @@ function buildCompanyInfo(){
     grid.append(hoursContainer, addressContainer);
     section.append(grid);
     return section;
+}
+
+function buildMenu(){
+    console.log(menu.menu)
+    const content = document.querySelector('#content');
+    const items = menu.menu;
+    const section = createElement('section', 'menu-section');
+    const sectionHeading = createElement('h2', null, [], 'Our Menu');
+    const grid = createElement('div', 'menu', ['grid']);
+    items.forEach(i => {
+    const item = createElement('div', null, ['item']);
+    const imgContainer = createElement('figure', null, ['menu-img']);
+    const itemHead = createElement('div', null, ['item-head']);
+    const img = createElement('img', null, [], null, i.img);
+    const name = createElement('h3', null, [], i.name);
+    const price = createElement('p', null, ['price'], `$${i.price}`);
+    const desc = createElement('p', null, ['description'], i.description);
+    imgContainer.append(img);
+    itemHead.append(name, price);
+    item.append(imgContainer, itemHead, desc);
+    grid.append(item);
+    });
+    section.append(sectionHeading, grid);
+    content.append(section);
+
+}
+
+function handleNav(e){
+    e.preventDefault();
+    const target = e.target;
+    clearMain();
+    switch(target.textContent){
+        case 'Menu': buildMenu(); break;
+        case 'Home': buildHomePage(); break;
+        case 'About': console.log('about'); break;
+        case 'Contact Us': console.log('contact'); break;
+    }
 }

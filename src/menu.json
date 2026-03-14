@@ -1,0 +1,52 @@
+{
+  "menu": [
+    {
+      "name": "Tokyo Shoyu",
+      "price": 13.99,
+      "description": "Classic soy sauce broth with sliced pork, scallions, bamboo shoots, and springy noodles.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Shoyu_Ramen.jpg"
+    },
+    {
+      "name": "Chashu Shoyu Deluxe",
+      "price": 15.49,
+      "description": "Rich shoyu ramen loaded with extra chashu pork, nori, menma, and green onion.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chashu%2C_Shoyu_Ramen%2C_Kintaro%2C_Paris_001.jpg"
+    },
+    {
+      "name": "Sapporo Miso",
+      "price": 14.99,
+      "description": "Savory miso broth with ground pork, corn, bean sprouts, and a soft egg.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bowl_of_miso_ramen.jpg"
+    },
+    {
+      "name": "Hakata Tonkotsu",
+      "price": 15.99,
+      "description": "Creamy pork-bone broth topped with tender pork, scallions, and thin noodles.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tonkotsu_ramen.JPG"
+    },
+    {
+      "name": "Spicy Tantanmen",
+      "price": 14.79,
+      "description": "Bold sesame-chili broth with a spicy kick, minced meat, and fresh greens.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tantanmen%2C_Op%C3%A9ra_Ramen%2C_Paris_001.jpg"
+    },
+    {
+      "name": "Tsukemen Dipping Ramen",
+      "price": 15.29,
+      "description": "Thick noodles served separately with a concentrated dipping broth and savory toppings.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tsukemen.jpg"
+    },
+    {
+      "name": "Takayama Ramen",
+      "price": 13.49,
+      "description": "A lighter regional ramen with a soy-based broth and a clean, balanced finish.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Takayama_ramen.jpg"
+    },
+    {
+      "name": "New Tantanmen",
+      "price": 14.59,
+      "description": "Garlicky, spicy ramen with a punchy broth, minced meat, and a rich flavor profile.",
+      "img": "https://commons.wikimedia.org/wiki/Special:Redirect/file/New-Tantanmen.JPG"
+    }
+  ]
+}
