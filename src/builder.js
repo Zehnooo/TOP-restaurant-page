@@ -20,10 +20,10 @@ function buildHeader(){
     const logoContainer = document.querySelector('#logo-container');
     const header = document.querySelector("header");
     const buttons = header.querySelectorAll('button');
-    const buttonClasses = ['hvr-grow', 'hvr-bubble-bottom', 'hvr-underline-from-center','tracking-in'];
+    const buttonClasses = ['hvr-grow', 'hvr-bubble-bottom', 'hvr-underline-from-center'];
 
-    const logoImg = createElement('img', null, ['tracking-in'], null, logo );
-    const name = createElement('h2', null, ['tracking-in'], 'Zehno\'s Ramen');
+    const logoImg = createElement('img', null, [], null, logo );
+    const name = createElement('h2', null, [], "Zehno's Ramen");
     name.style.color = 'black';
 
     buttonClasses.forEach((buttonClass) => buttons.forEach(button => button.classList.add(buttonClass)));
@@ -41,23 +41,20 @@ function buildHomeCover(content){
     content.append(container);
     if (image.complete){
         image.classList.remove('hidden');
-        image.classList.add('fade-in');
-
     } else {
         image.addEventListener('load', () => {
 
             setTimeout(() => {
                 image.classList.remove('hidden')
-                image.classList.add('fade-in')
             }, 500);
         });
-
     }
     console.log('cover built');
 }
 
 function buildHomeSectionA(content){
     const section = createElement('section', 's1');
+    const heading = createElement('h2', null, [], 'Come For The Food, Stay For The Atmosphere');
     const grid = createElement('div', 'image-grid', ['grid']);
     const imgFiles = [ramen1, ramen2, ramen3, ramen4, ramen5, ramen6];
     const images = [];
@@ -69,12 +66,29 @@ function buildHomeSectionA(content){
         images.push(div);
     }
     images.forEach((img) => grid.append(img));
-    section.append(grid);
+    section.append(heading, grid);
     content.append(section);
 }
 
 function buildHomeSectionB(content){
     const section = createElement('section', 's2');
+
+
+    content.append(section);
+    console.log('section B built');
+}
+export function buildHomePage(){
+    const content = document.querySelector('#content');
+    buildHeader();
+    buildHomeCover(content);
+    buildHomeSectionA(content);
+    buildHomeSectionB(content);
+    document.body.classList.add('reveal');
+    console.log('home page built');
+}
+
+function buildCompanyInfo(){
+    const section = createElement('section', 'company-info-section');
     const grid = createElement('div', 'company-info', ['grid']);
     const hoursContainer = createElement('div', 'hours');
     const hoursHeading = createElement('h3', null, [], 'Hours');
@@ -89,22 +103,8 @@ function buildHomeSectionB(content){
     const addressContainer = createElement('div', 'location');
     const addressHeading = createElement('h3', null, [], 'Location');
 
-
-
-
     addressContainer.append(addressHeading);
     grid.append(hoursContainer, addressContainer);
     section.append(grid);
-    content.append(section);
-    console.log('section B built');
-}
-export function buildHomePage(){
-    const content = document.querySelector('#content');
-    buildHeader();
-    buildHomeCover(content);
-    buildHomeSectionA(content);
-    buildHomeSectionB(content);
-    document.body.classList.add('reveal');
-    document.body.classList.remove('hidden');
-    console.log('home page built');
+    return section;
 }
